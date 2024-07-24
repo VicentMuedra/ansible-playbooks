@@ -1,0 +1,11 @@
+---
+- name: List contents of /etc/ansible
+  hosts: all
+  tasks:
+    - name: List directory contents
+      command: ls -la /etc/ansible
+      register: result
+
+    - name: Show directory contents
+      debug:
+        var: result.stdout
